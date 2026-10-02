@@ -1,6 +1,7 @@
 services:
   backend:
-    build: .
+    build:
+      context: .
     container_name: hermes-api
     restart: unless-stopped
     user: "10000:10000"
