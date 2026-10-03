@@ -1,6 +1,7 @@
 services:
   backend:
-    build: .
+    build:
+      context: .
     container_name: hermes-api
     restart: unless-stopped
     user: "10000:10000"
@@ -30,7 +31,7 @@ services:
       - "127.0.0.1:5001:5000"
       - "${API_BIND_ADDRESS}:5001:5000"
     volumes:
-      - /home/arrojorge/backend-api-hermes/bck-server-hermes-sept26/hermes-scaleway/hermes/data/outputs:/hermes-outputs:ro
+      - ./hermes-localhost/hermes/data/outputs:/hermes-outputs:ro
     depends_on:
       postgres:
         condition: service_healthy
