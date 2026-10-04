@@ -13,7 +13,7 @@ services:
       TZ: Europe/Madrid
 
       API_SERVER_ENABLED: "true"
-      API_SERVER_HOST: "172.19.0.2"
+      API_SERVER_HOST: "0.0.0.0"
       API_SERVER_PORT: "8642"
 
       API_SERVER_KEY: "rnyR85qzFzS1SztH7vlfg9TZVDsC9v2J"
@@ -35,9 +35,6 @@ services:
 
     mem_limit: 4g
     cpus: "2"
-
-    ports:
-      - "127.0.0.1:8642:8642"
 
   browser:
     image: browserless/chrome:latest
@@ -64,7 +61,8 @@ services:
 networks:
 
   hermes-net:
-    driver: bridge
+    external: true
+    name: hermes-net
 
   searxng-net:
     driver: bridge
