@@ -156,4 +156,4 @@ networks:
     driver: bridge
   hermes-net:
     external: true
-    name: hermes_hermes-net
+    name: hermes-net
